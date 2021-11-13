@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数式 &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../OTHER/OTHER.html" />
+    <link rel="prev" title="ロジック" href="../LOGIC/LOGIC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">絶対値</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">＋</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">アングルの差異</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">後方ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">角度からのコサイン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">ラジアンからのコサイン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">ベクトルを作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">クロスプロダクト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">アングルからの方向</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">以下への方向</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">以下の間の距離</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">/</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">ドット積</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">下方ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">前方ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">左ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">ワールドからローカルポジションへ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">ワールドからローカルベクトルへ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">最大</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">剰余</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">乗算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">ノーマル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">数乗する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">ランダム実数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">右ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">整数にまとめる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">角度からのサイン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">ラジアンからのサイン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">平方根</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">減算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">上方ベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">以下へのベクトル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">ローカルからワールドポジションへ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">ローカルからワールドベクトルへ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x">Xコンポーネントを取得</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#z">Zコンポーネントを取得</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">Zコンポーネントを取得</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Variable.html">変数</a> &raquo;</li>
+      <li>数式</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Variable/MATH/MATH.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>数式<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<hr class="docutils" />
+<section id="id2">
+<h2>絶対値<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた <strong>数値</strong> 入力の未指定値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id3">
+<h2>＋<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>数値</strong> か2つの <strong>ヴェクター</strong> 値の合計を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id4">
+<h2>アングルの差異<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの角度（単位は度）の差異を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値（第1角度）</p></li>
+<li><p>数値（第2角度）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id5">
+<h2>後方ベクトル<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（0、0、1）の後ろ方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id6">
+<h2>角度からのコサイン<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された角度のコサイン値を度単位で返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id7">
+<h2>ラジアンからのコサイン<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された角度のコサイン値をラジアン単位で返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id8">
+<h2>ベクトルを作成<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>3つの与えられている「X」（左）、「Y」（上）および「Z」（前）値で出来ている <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値（X値）</p></li>
+<li><p>数値（Y値）</p></li>
+<li><p>数値（Z値）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id9">
+<h2>クロスプロダクト<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>ヴェクター</strong> 値の間にあるクロス積を返します。2つの <strong>ヴェクター</strong> 入力が並行である場合、結果はゼロになります。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id10">
+<h2>アングルからの方向<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられている水平（ヨー値）と垂直（傾斜）角度（度単位で）から方位の <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値 (Horizontal)</p></li>
+<li><p>数値 (Vertical)</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id11">
+<h2>以下への方向<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>方位の、あるいは正規化された <strong>ヴェクター</strong> を、開始位置と終了位置から返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（開始位置）</p></li>
+<li><p>ヴェクター（終了位置）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id12">
+<h2>以下の間の距離<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>開始地点と終了地点の間の距離を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（開始位置）</p></li>
+<li><p>ヴェクター（終了位置）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id13">
+<h2>/<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>数値</strong> の間、または <strong>ヴェクター</strong> と <strong>数値</strong> の間の比率を返します。
+<strong>数値</strong> で <strong>ヴェクター</strong> を割った数値はスケーリングされた <strong>ヴェクター</strong> を出します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id14">
+<h2>ドット積<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>ヴェクター</strong> 値の間にあるドット積を返します。この2つの数値がお互いに対して直角な場合、その結果はゼロになります。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id15">
+<h2>下方ベクトル<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（0、-1、0）の下方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id16">
+<h2>前方ベクトル<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（0、0、-1）の前方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id17">
+<h2>左ベクトル<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（1、0、0）の左方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id18">
+<h2>ワールドからローカルポジションへ<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたワールド位置をローカルの <strong>プレイヤー</strong> 空間の対応する位置に変換します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（ワールド位置）</p></li>
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター（ローカル位置）</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id19">
+<h2>ワールドからローカルベクトルへ<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたワールドベクトルをローカルの <strong>プレイヤー</strong> 空間の対応するベクトルに変換します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（ワールドベクトル）</p></li>
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター（ローカルベクトル）</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id20">
+<h2>最大<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された2つの <strong>数値</strong> のうち大きい方を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id21">
+<h2>剰余<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>1番目に提供された値を2番目に指定された値で割った余りを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id22">
+<h2>乗算<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>数値</strong> の値の積、または <strong>ヴェクター</strong> と <strong>数値</strong> の値の積を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id23">
+<h2>ノーマル<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク"></a></h2>
+<p><strong>ヴェクター</strong> の単位長さの正規化を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id24">
+<h2>数乗する<a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>1番目に指定された値を、2番目に指定された値の累乗で返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値（ベース）</p></li>
+<li><p>数値（指数）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id25">
+<h2>ランダム実数<a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された最小値と最大値（を含む）の間のランダムな <strong>数値</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値（最小）</p></li>
+<li><p>数値（最大）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id26">
+<h2>右ベクトル<a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（-1、0、0）の右方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id27">
+<h2>整数にまとめる<a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>入力値を四捨五入した整数 <strong>数値</strong> を返します。 <strong>数値</strong> の10進数が0.5以上であれば切り上げ、0.5未満であれば、値は切り下げられます。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id28">
+<h2>角度からのサイン<a class="headerlink" href="#id28" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された角度のサイン値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id29">
+<h2>ラジアンからのサイン<a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたラジアン単位の角度のサイン値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id30">
+<h2>平方根<a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>数値</strong> の平方根を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id31">
+<h2>減算<a class="headerlink" href="#id31" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>2つの <strong>数値</strong> 、または2つの <strong>ヴェクター</strong> 値の差を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値 or ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id32">
+<h2>上方ベクトル<a class="headerlink" href="#id32" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>（0、1、0）上方向 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id33">
+<h2>以下へのベクトル<a class="headerlink" href="#id33" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>移動開始位置から終了位置までの距離 <strong>ヴェクター</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（開始位置）</p></li>
+<li><p>ヴェクター (Ending Position)（終了位置）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id34">
+<h2>ローカルからワールドポジションへ<a class="headerlink" href="#id34" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定したローカル <strong>プレイヤー</strong> の位置をワールド空間内の対応する位置に変換します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（ローカル位置）</p></li>
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター（ワールド位置）</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id35">
+<h2>ローカルからワールドベクトルへ<a class="headerlink" href="#id35" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定したローカル <strong>プレイヤー</strong> ベクターをワールド空間内の対応するベクターに変換します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（ローカルベクトル）</p></li>
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ヴェクター（ワールドベクトル）</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="x">
+<h2>Xコンポーネントを取得<a class="headerlink" href="#x" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>ヴェクター</strong> の'X'コンポーネントを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="z">
+<h2>Zコンポーネントを取得<a class="headerlink" href="#z" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>ヴェクター</strong> の'Y'コンポーネントを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id36">
+<h2>Zコンポーネントを取得<a class="headerlink" href="#id36" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>ヴェクター</strong> の'Y'コンポーネントを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-left" title="ロジック" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../OTHER/OTHER.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

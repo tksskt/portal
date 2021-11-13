@@ -1,0 +1,12 @@
+==========
+アクション
+==========
+
+.. toctree::
+   :maxdepth: 2
+
+   ./ARRAYS/ARRAYS.rst
+   ./GAMEPLAY/GAMEPLAY.rst
+   ./LOGIC/LOGIC.rst
+   ./PLAYER/PLAYER.rst
+   ./USER_INTERFACE/USER_INTERFACE.rst

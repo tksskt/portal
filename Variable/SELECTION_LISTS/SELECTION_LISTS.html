@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>選択リスト &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="リテラル" href="../LITERALS/LITERALS.html" />
+    <link rel="prev" title="ユーザーインターフェース" href="../USER_INTERFACE/USER_INTERFACE.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MATH/MATH.html">数式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">選択リスト</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">インベントリー：キャラクターの専門技能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">カスタムメッセージスロット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">勢力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">プレイヤーの所持アイテムのスロット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">医療ガジェットのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">インベントリー：格闘武器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">インベントリー：オープンガジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">インベントリー：メインウェポン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">入力制限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">再補給のタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">インベントリー：サブウェポン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">プレイヤー兵士</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">プレイヤーの状態（ブール）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">プレイヤーの状態（数）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">プレイヤーの状態（ベクトル）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">インベントリー：投擲</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Variable.html">変数</a> &raquo;</li>
+      <li>選択リスト</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Variable/SELECTION_LISTS/SELECTION_LISTS.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>選択リスト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<hr class="docutils" />
+<section id="id2">
+<h2>インベントリー：キャラクターの専門技能<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>全キャラクターの専門技能のコレクションから <strong>所持アイテムのキャラクター専門技能アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>BF3</p>
+<ul>
+<li><p>弾薬箱</p></li>
+<li><p>医療キット</p></li>
+<li><p>リペアツール</p></li>
+<li><p>T-UGS</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>双眼鏡</p></li>
+<li><p>医療キット</p></li>
+<li><p>レンチ</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>SG-36 セントリーガン</p></li>
+<li><p>バリスティックシールド</p></li>
+<li><p>防衛強化システム</p></li>
+<li><p>グラップル</p></li>
+<li><p>OV-P偵察ドローン</p></li>
+<li><p>信号ハッカー</p></li>
+<li><p>グレネードベルト</p></li>
+<li><p>S21シレットピストル</p></li>
+<li><p>装備箱</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>弾薬箱</p></li>
+<li><p>医療キット</p></li>
+<li><p>モーションセンサー</p></li>
+<li><p>リペアツール</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>所持アイテムのキャラクター専門技能アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id3">
+<h2>カスタムメッセージスロット<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>カスタムメッセージを表示やカスタムメッセージをクリアを使用してプレイヤー向けに画面へ情報を表示する <strong>カスタムメッセージスロットアイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>ヘッダーテキスト</p></li>
+<li><p>メッセージテキスト1</p></li>
+<li><p>メッセージテキスト2</p></li>
+<li><p>メッセージテキスト3</p></li>
+<li><p>メッセージテキスト4</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>カスタムメッセージスロットアイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id4">
+<h2>勢力<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>利用可能な全勢力のコレクションから <strong>勢力アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>BF3ロシア</p></li>
+<li><p>BF3アメリカ</p></li>
+<li><p>1942ドイツ</p></li>
+<li><p>1942イギリス</p></li>
+<li><p>1942アメリカ</p></li>
+<li><p>2042ロシア</p></li>
+<li><p>2042アメリカ</p></li>
+<li><p>BC2ロシア</p></li>
+<li><p>BC2アメリカ</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>勢力アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id5">
+<h2>プレイヤーの所持アイテムのスロット<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>利用可能なすべてのプレイヤーの所持品スロットのコレクションから、 <strong>プレイヤー所持アイテムのスロットアイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト
++ キャラクターの専門技能
++ 格闘武器
++ ガジェットを開く
++ メインウェポン
++ サブウェポン
++ 投擲</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id6">
+<h2>医療ガジェットのタイプ<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>医療ガジェットを適用で使用可能な医療ガジェットタイプのコレクションから <strong>医療ガジェットタイプアイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト
++ 医療箱
++ 医療キット</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>医療ガジェットタイプアイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id7">
+<h2>インベントリー：格闘武器<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>すべての格闘武器のコレクションから <strong>所持アイテムの格闘武器アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>BF3</p>
+<ul>
+<li><p>ダマーヴァンド・ポーク</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>ペイン・イン・ザ・ネック</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>Baku ACB-90</p></li>
+<li><p>フェイタル・フレンド</p></li>
+<li><p>リブ・オーナー</p></li>
+<li><p>サバイバリスト・エッジ</p></li>
+<li><p>オープンアシスト</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>バッド・カルマ</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>所持アイテムの格闘武器アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id8">
+<h2>インベントリー：オープンガジェット<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>開いているすべてのガジェットのコレクションから <strong>所持アイテムのオープンガジェットアイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>BF3</p>
+<ul>
+<li><p>対戦車地雷</p></li>
+<li><p>C4</p></li>
+<li><p>除細動器</p></li>
+<li><p>EODボット</p></li>
+<li><p>FGM-148 ジャベリン</p></li>
+<li><p>FIM-92 スティンガー</p></li>
+<li><p>M18 クレイモア</p></li>
+<li><p>無線ビーコン</p></li>
+<li><p>SA-18 IGLA</p></li>
+<li><p>SMAW</p></li>
+<li><p>SOFLAM</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>地雷</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>弾薬箱</p></li>
+<li><p>IBA装甲板</p></li>
+<li><p>対戦車地雷</p></li>
+<li><p>C5爆薬</p></li>
+<li><p>無反動M5</p></li>
+<li><p>医療箱</p></li>
+<li><p>リペアツール</p></li>
+<li><p>メディカルペン</p></li>
+<li><p>SOFLAM</p></li>
+<li><p>投入ビーコン</p></li>
+<li><p>FXM-33対空ミサイル</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>対戦車地雷</p></li>
+<li><p>C4</p></li>
+<li><p>除細動器</p></li>
+<li><p>M136 AT4</p></li>
+<li><p>迫撃砲攻撃</p></li>
+<li><p>RPG-7</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>所持アイテムのオープンガジェットアイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id9">
+<h2>インベントリー：メインウェポン<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>すべてのメインウェポンのコレクションから <strong>所持アイテムのメインウェポンアイテム</strong> を返します。</p>
+<dl>
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>BF3</p>
+<ul>
+<li><p>A-91</p></li>
+<li><p>ACW-R</p></li>
+<li><p>AKS-74U</p></li>
+<li><p>AN-94</p></li>
+<li><p>AS VAL</p></li>
+<li><p>DAO-12</p></li>
+<li><p>G3A3</p></li>
+<li><p>M16A3</p></li>
+<li><p>M240B</p></li>
+<li><p>M39 EMR</p></li>
+<li><p>M416</p></li>
+<li><p>M60E4</p></li>
+<li><p>M98B</p></li>
+<li><p>P90</p></li>
+<li><p>PP-2000</p></li>
+<li><p>SCAR-H</p></li>
+<li><p>SPAS-12</p></li>
+<li><p>SVD</p></li>
+<li><p>88式軽機関銃</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>Bar 1918</p></li>
+<li><p>バズーカ</p></li>
+<li><p>K98</p></li>
+<li><p>K98 スナイパー</p></li>
+<li><p>No.4 スナイパー</p></li>
+<li><p>M1 ガーランド</p></li>
+<li><p>MP40</p></li>
+<li><p>パンツァーシュレック</p></li>
+<li><p>StG44</p></li>
+<li><p>トンプソン</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>AC-12</p></li>
+<li><p>AK-24</p></li>
+<li><p>SVK</p></li>
+<li><p>DM7</p></li>
+<li><p>DXR-1</p></li>
+<li><p>VCAR</p></li>
+<li><p>K30</p></li>
+<li><p>LCMG</p></li>
+<li><p>GVT45-70</p></li>
+<li><p>MP9</p></li>
+<li><p>NTW-50</p></li>
+<li><p>PKP-BP</p></li>
+<li><p>PP-29</p></li>
+<li><p>MCS-880</p></li>
+<li><p>12Mオート</p></li>
+<li><p>SFAR-M GL</p></li>
+<li><p>M5A3</p></li>
+<li><p>PBX-45</p></li>
+<li><p>SWS-10</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>AKS-74U</p></li>
+<li><p>AN-94</p></li>
+<li><p>G3</p></li>
+<li><p>GOL スナイパーマグナム</p></li>
+<li><p>M1 ガーランド</p></li>
+<li><p>M16A2</p></li>
+<li><p>M24 スナイパー</p></li>
+<li><p>M416</p></li>
+<li><p>M60</p></li>
+<li><p>PP-2000</p></li>
+<li><p>SPAS-12</p></li>
+<li><p>トンプソン</p></li>
+<li><p>88式軽機関銃</p></li>
+<li><p>XM8 プロトタイプ</p></li>
+<li><p>XM8 コンパクト</p></li>
+<li><p>XM8 LMG</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>所持アイテムのメインウェポンアイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id10">
+<h2>入力制限<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>入力制限を有効化で制限可能なすべての入力のコレクションから <strong>入力制限アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>カメラピッチ</p></li>
+<li><p>カメラヨー</p></li>
+<li><p>しゃがむ</p></li>
+<li><p>アビリティの切り替え(下)</p></li>
+<li><p>アビリティの切り替え(上)</p></li>
+<li><p>射撃モード</p></li>
+<li><p>メインを切り替える</p></li>
+<li><p>サブを切り替える</p></li>
+<li><p>撃つ</p></li>
+<li><p>アクション</p></li>
+<li><p>ジャンプ</p></li>
+<li><p>前進/後退</p></li>
+<li><p>左/右に移動</p></li>
+<li><p>伏せる</p></li>
+<li><p>リロード</p></li>
+<li><p>キャラクターの専門技能を選択</p></li>
+<li><p>格闘武器を選択</p></li>
+<li><p>ガジェットを開くを選択</p></li>
+<li><p>メインウェポンを選択</p></li>
+<li><p>サブウェポンを選択</p></li>
+<li><p>投擲武器を選択</p></li>
+<li><p>ダッシュ</p></li>
+<li><p>ズーム</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>入力制限アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id11">
+<h2>再補給のタイプ<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>補給で使用可能な補給タイプのコレクションから <strong>再補給のタイプアイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>弾薬箱</p></li>
+<li><p>弾薬箱</p></li>
+<li><p>装備箱</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<p>戻り値
++ 再補給のタイプアイテム</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id12">
+<h2>インベントリー：サブウェポン<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>すべてのサブウェポンのコレクションから <strong>所持アイテムの補助武器アイテム</strong> を返します。</p>
+<dl>
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>BF3</p>
+<ul>
+<li><p>M1911</p></li>
+<li><p>M93R</p></li>
+<li><p>MP412 REX</p></li>
+<li><p>MP443</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>M1911</p></li>
+<li><p>P38</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>G57</p></li>
+<li><p>MP28</p></li>
+<li><p>M44</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>M1911</p></li>
+<li><p>M93R</p></li>
+<li><p>MP412 REX</p></li>
+<li><p>MP443</p></li>
+<li><p>トレッサ―ダーツガン</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<p>戻り値
++ 所持アイテムの補助武器アイテム</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id13">
+<h2>プレイヤー兵士<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>全兵士のリストから <strong>プレイヤー兵士アイテム</strong> を返します。
+パラメーター</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>BF3ロシア</p>
+<ul>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>斥候兵</p></li>
+<li><p>援護兵</p></li>
+</ul>
+</li>
+<li><p>BF3アメリカ</p>
+<ul>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>斥候兵</p></li>
+<li><p>援護兵</p></li>
+</ul>
+</li>
+<li><p>1942ドイツ</p>
+<ul>
+<li><p>対戦車兵</p></li>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>衛生兵</p></li>
+<li><p>偵察兵</p></li>
+</ul>
+</li>
+<li><p>1942イギリス
++ 対戦車兵
++ 突撃兵
++ 工兵
++ 衛生兵
++ 偵察兵</p></li>
+<li><p>1942アメリカ</p>
+<ul>
+<li><p>対戦車兵</p></li>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>衛生兵</p></li>
+<li><p>偵察兵</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>グレーブス</p></li>
+<li><p>ロジェ</p></li>
+<li><p>エスピノーザ</p></li>
+<li><p>ファルック</p></li>
+<li><p>エンジェル</p></li>
+<li><p>ガスコヴィスキィ</p></li>
+<li><p>ヴァン・デール</p></li>
+<li><p>ラオ</p></li>
+</ul>
+</li>
+<li><p>BC2ロシア</p>
+<ul>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>衛生兵</p></li>
+<li><p>偵察兵</p></li>
+</ul>
+</li>
+<li><p>BC2アメリカ</p>
+<ul>
+<li><p>突撃兵</p></li>
+<li><p>工兵</p></li>
+<li><p>衛生兵</p></li>
+<li><p>偵察兵</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤー兵士アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id14">
+<h2>プレイヤーの状態（ブール）<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>選択した <strong>ブールベースのプレイヤープロパティのプレイヤーの状態（ブール）アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>AI兵士である</p></li>
+<li><p>生存中</p></li>
+<li><p>蘇生されている最中</p></li>
+<li><p>しゃがんでいる</p></li>
+<li><p>死んでいる</p></li>
+<li><p>発砲中</p></li>
+<li><p>飛行中</p></li>
+<li><p>操作中</p></li>
+<li><p>乗り物内</p></li>
+<li><p>水中</p></li>
+<li><p>ジャンプ中</p></li>
+<li><p>ダウン中</p></li>
+<li><p>地上にいる</p></li>
+<li><p>パラシュート使用中</p></li>
+<li><p>伏せている</p></li>
+<li><p>リロード中</p></li>
+<li><p>蘇生中</p></li>
+<li><p>ダッシュ中</p></li>
+<li><p>立っている</p></li>
+<li><p>跳び越えている</p></li>
+<li><p>ズーム中</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤーの状態（ブール）アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id15">
+<h2>プレイヤーの状態（数）<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>選択した <strong>数値ベースのプレイヤープロパティのプレイヤーの状態（数）アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>現在のライフ</p></li>
+<li><p>現在の所持弾薬</p></li>
+<li><p>現在の所持マガジン弾薬</p></li>
+<li><p>最大ライフ</p></li>
+<li><p>標準化ライフ</p></li>
+<li><p>速度</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤーの状態（数）アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id16">
+<h2>プレイヤーの状態（ベクトル）<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>選択した <strong>ヴェクターベースのプレイヤープロパティのプレイヤーの状態（ベクトル）アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>直線速度</p></li>
+<li><p>位置</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤーの状態（ベクトル）アイテム</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id17">
+<h2>インベントリー：投擲<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>すべての投擲アイテムのコレクションから <strong>所持アイテムの投擲アイテム</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>リスト</p>
+<ul>
+<li><p>BF3</p>
+<ul>
+<li><p>M67 グレネード</p></li>
+</ul>
+</li>
+<li><p>1942</p>
+<ul>
+<li><p>爆発物パック</p></li>
+<li><p>Mk Ⅱ 手榴弾</p></li>
+<li><p>柄付手榴弾</p></li>
+</ul>
+</li>
+<li><p>2042</p>
+<ul>
+<li><p>EMPグレネード</p></li>
+<li><p>破片手榴弾</p></li>
+<li><p>焼夷手榴弾</p></li>
+<li><p>近接センサー</p></li>
+<li><p>発煙弾</p></li>
+</ul>
+</li>
+<li><p>BC2</p>
+<ul>
+<li><p>破片手榴弾</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<p>戻り値
++ PYRITE_TYPE_THORWABLESITEMINDEX</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../USER_INTERFACE/USER_INTERFACE.html" class="btn btn-neutral float-left" title="ユーザーインターフェース" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../LITERALS/LITERALS.html" class="btn btn-neutral float-right" title="リテラル" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

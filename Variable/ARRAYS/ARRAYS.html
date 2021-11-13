@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>配列 &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="イベントのペイロード" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" />
+    <link rel="prev" title="変数" href="../Variable.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">配列</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">配列に追加</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">スライスを配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">以下のカウント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">現在の配列要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">空配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">フィルター済み配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-of">First Of</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-true-for-all">Is True For All</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-true-for-any">Is True For Any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-of">Last Of</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">マップ済み配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">ランダム化配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">配列内のランダムな値</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">ソート済み配列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">配列内の値</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MATH/MATH.html">数式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Variable.html">変数</a> &raquo;</li>
+      <li>配列</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Variable/ARRAYS/ARRAYS.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>配列<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<hr class="docutils" />
+<section id="id2">
+<h2>配列に追加<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた数値が末尾に付いた <strong>配列</strong> のコピーを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id3">
+<h2>スライスを配列<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたインデックス範囲にある数値のみを含んだ指定 <strong>配列</strong> のコピーを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>数値（インデックスを開始）</p></li>
+<li><p>数値（数）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id4">
+<h2>以下のカウント<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列内にある要素の数値</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id5">
+<h2>現在の配列要素<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>参照値を、求められている現在の <strong>配列</strong> 要素に返します。フィルター済み配列、マップ済み配列、ソート済み配列、Is True For AllおよびIs True For Anyのみに対して使用されます。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id6">
+<h2>空配列<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>初期化された空の <strong>配列</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id7">
+<h2>フィルター済み配列<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた条件に基づいて指定された <strong>配列のフィルターされたバージョン</strong> を返します。
+このブロックは配列全体を循環します。現在の配列要素ブロックを利用して、それぞれの反復に対する配列での要素を表すことができます。
+プレイヤーを取得のような配列に対しては、現在の配列要素が該当の配列内の各プレイヤーを表します。その後、そのプレイヤーの特性に基いた独自のフィルター条件を作ることができます
+（例：スコア、または一部のカスタムプレイヤー変数値）。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="first-of">
+<h2>First Of<a class="headerlink" href="#first-of" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> の最初の数値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="is-true-for-all">
+<h2>Is True For All<a class="headerlink" href="#is-true-for-all" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> のすべての要素について、指定された条件がTrueであれば、Trueを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>ブール</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="is-true-for-any">
+<h2>Is True For Any<a class="headerlink" href="#is-true-for-any" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された条件が、指定された <strong>配列</strong> の中の少なくとも1つの要素についてTrueである場合、Trueを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>ブール</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="last-of">
+<h2>Last Of<a class="headerlink" href="#last-of" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> の最後の値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id8">
+<h2>マップ済み配列<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> のコピーを、提供されたマップ済みの表現を使って評価された値で返します。
+次の例では、プレイヤーを取得 <strong>配列にゲームモードスコアを取得と現在の配列要素を加えて、プレイヤースコアの配列</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>あらゆるタイプ（マップ済みの表現）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id9">
+<h2>ランダム化配列<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> のコピーを、値をランダムな順序で並べて返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id10">
+<h2>配列内のランダムな値<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> の中からランダムな値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id11">
+<h2>ソート済み配列<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>並び替え（昇順）する <strong>数値</strong> 値を与えると、指定した <strong>配列</strong> の並び替えられたバージョンを返します。
+現在の配列要素は <strong>配列</strong> の各値を表すために使用できます。
+次の例では、現在の配列要素はプレイヤーを取得の各プレイヤーを表し、 <strong>ゲームモードスコアを取得</strong> は <strong>現在の配列要素</strong> と共に使用され、 <strong>配列</strong> を昇順で並び替えるためのランクとして使用されるスコアを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>数値（ランク）</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id12">
+<h2>配列内の値<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列</strong> のインデックスで見つかった値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Variable.html" class="btn btn-neutral float-left" title="変数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" class="btn btn-neutral float-right" title="イベントのペイロード" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

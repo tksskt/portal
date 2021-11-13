@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プレイヤー &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="ユーザーインターフェース" href="../USER_INTERFACE/USER_INTERFACE.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../OTHER/OTHER.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MATH/MATH.html">数式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">プレイヤー</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">全般</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">プレイヤーを取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">以下に最も近いプレイヤー</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">以下から最も遠いプレイヤー</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">プレイヤーのデス数を取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">プレイヤーのキル数を取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id">チームIDを取得</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">兵士</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">所持アイテムの弾薬を取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">所持アイテムのマガジン弾薬を取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">プレイヤーの状態を取得</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">所持アイテムを所有</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">所持アイテムのスロットがアクティブ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#is">Is兵士を使用しているプレイヤー</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Variable.html">変数</a> &raquo;</li>
+      <li>プレイヤー</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Variable/PLAYER/PLAYER.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>プレイヤー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<hr class="docutils" />
+<section id="id2">
+<h2>全般<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id3">
+<h3>プレイヤーを取得<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ゲーム内にいる全プレイヤーの <strong>配列</strong> を返します。</p>
+<dl class="simple">
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>配列</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id4">
+<h3>以下に最も近いプレイヤー<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>最も近い <strong>プレイヤー</strong> をワールド内の位置に返します。 <strong>チームId</strong> を使用してフィルターをかけることができます。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（位置）</p></li>
+<li><p>(オプショナル)チームId</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id5">
+<h3>以下から最も遠いプレイヤー<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ある位置から最も遠い <strong>プレイヤー</strong> を返します。 <strong>チームId</strong> を使用してフィルターをかけることができます。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ヴェクター（位置）</p></li>
+<li><p>(オプショナル)チームId</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id6">
+<h3>プレイヤーのデス数を取得<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ターゲット <strong>プレイヤー</strong> の合計デス数を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id7">
+<h3>プレイヤーのキル数を取得<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ターゲット <strong>プレイヤー</strong> の合計キル数を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id">
+<h3>チームIDを取得<a class="headerlink" href="#id" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>指定された <strong>プレイヤー</strong> の <strong>チームId</strong> の値、または指定された数値に対応する <strong>チームId</strong> の値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー or 数値</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>チームId</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>兵士<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id9">
+<h3>所持アイテムの弾薬を取得<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>指定した <strong>プレイヤー所持アイテムのスロットアイテム</strong> のターゲット <strong>プレイヤー</strong> の装填弾薬数を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id10">
+<h3>所持アイテムのマガジン弾薬を取得<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>指定した <strong>プレイヤー所持アイテムのスロットアイテム</strong> のターゲット <strong>プレイヤー</strong> のマガジン弾薬数を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id11">
+<h3>プレイヤーの状態を取得<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ターゲット <strong>プレイヤー</strong> の状態の値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>プレイヤーの状態（ブール）アイテム or プレイヤーの状態（数）アイテム or プレイヤーの状態（ベクトル）アイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール or 数値 or ヴェクター</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id12">
+<h3>所持アイテムを所有<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>提供された <strong>プレイヤー</strong> が指定された能力を持つかどうかを示す <strong>ブール</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>所持アイテムのメインウェポンアイテム or 所持アイテムの補助武器アイテム or 所持アイテムのキャラクター専門技能アイテム or 所持アイテムのオープンガジェットアイテム or 所持アイテムの投擲アイテム or 所持アイテムの格闘武器アイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id13">
+<h3>所持アイテムのスロットがアクティブ<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ターゲット <strong>プレイヤー</strong> のアクティブ所持品スロットが与えられた <strong>プレイヤー所持アイテムのスロットアイテム</strong> であるかにかかわらず、Trueを返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="is">
+<h3>Is兵士を使用しているプレイヤー<a class="headerlink" href="#is" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>ターゲット <strong>プレイヤー</strong> が指定された <strong>プレイヤー兵士アイテム</strong> であれば、 <strong>ブール</strong> を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>プレイヤー兵士アイテム</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../OTHER/OTHER.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../USER_INTERFACE/USER_INTERFACE.html" class="btn btn-neutral float-right" title="ユーザーインターフェース" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

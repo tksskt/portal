@@ -1,0 +1,18 @@
+==========
+変数
+==========
+
+.. toctree::
+   :maxdepth: 2
+
+   ./ARRAYS/ARRAYS.rst
+   ./EVENT_PAYLOADS/EVENT_PAYLOADS.rst
+   ./GAMEPLAY/GAMEPLAY.rst
+   ./LOGIC/LOGIC.rst
+   ./MATH/MATH.rst
+   ./OTHER/OTHER.rst
+   ./PLAYER/PLAYER.rst
+   ./USER_INTERFACE/USER_INTERFACE.rst
+   ./SELECTION_LISTS/SELECTION_LISTS.rst
+   ./LITERALS/LITERALS.rst
+   ./CONVENIENCE/CONVENIENCE.rst

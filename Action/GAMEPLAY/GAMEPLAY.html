@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ゲームプレイ &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="ロジック" href="../LOGIC/LOGIC.html" />
+    <link rel="prev" title="配列" href="../ARRAYS/ARRAYS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Action.html">アクション</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ゲームプレイ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">出撃</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">すべてのプレイヤーの出撃を有効化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">再出撃時間を設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">プレイヤーの出撃を有効化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">全プレイヤーの出撃をキャンセル</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">プレイヤーの出撃をキャンセル</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">ゲームモード</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">デフォルトのゲームモードスコアリングを有効化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">デフォルトのゲームモード勝利条件を有効化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">ボイスオーバーメッセージングを有効化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">ゲームモードを終了</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">全プレイヤーの出撃を強制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">ゲームモードのタイムを停止</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">ゲームモードのタイムをリセット</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">ゲームモードスコアを設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">ゲームモードのタイムリミットを設定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">ゲームモードのターゲットスコアを設定</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">全般</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id">チームIDを設定</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">兵士</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">キル</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">ターゲットをスポット</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">ターゲットのスポットをキャンセル</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェイス</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variable/Variable.html">変数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Action.html">アクション</a> &raquo;</li>
+      <li>ゲームプレイ</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Action/GAMEPLAY/GAMEPLAY.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>ゲームプレイ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<hr class="docutils" />
+<section id="id2">
+<h2>出撃<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id3">
+<h3>すべてのプレイヤーの出撃を有効化<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay1.png" src="../../_images/gameplay1.png" />
+<p>全プレイヤー向けに、出撃画面からの出現を有効化、または無効化します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id4">
+<h3>再出撃時間を設定<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay2.png" src="../../_images/gameplay2.png" />
+<p>ターゲット プレイヤー の再出撃にかかる時間を上書きします。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>プレイヤーの再出撃時間は60秒を超えません</p>
+</div>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id5">
+<h3>プレイヤーの出撃を有効化<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay3.png" src="../../_images/gameplay3.png" />
+<p>ターゲット <strong>プレイヤー</strong> へ出撃の有無を設定します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id6">
+<h3>全プレイヤーの出撃をキャンセル<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay4.png" src="../../_images/gameplay4.png" />
+<p>戦場で生存している全プレイヤーを出撃画面に返します。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id7">
+<h3>プレイヤーの出撃をキャンセル<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay5.png" src="../../_images/gameplay5.png" />
+<p>戦場で生存中のターゲット <strong>プレイヤー</strong> を出撃画面に返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>ゲームモード<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id9">
+<h3>デフォルトのゲームモードスコアリングを有効化<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay6.png" src="../../_images/gameplay6.png" />
+<p>デフォルトゲームモードのスコアロジックを有効化、または無効化します。
+デフォルトのスコアロジックは、基本のゲームモードスコアルール（例：チームデスマッチまたはフリー・フォー・オールでキルを決める）を参照します。
+独自にカスタムしたスコアロジックを実装させたい場合には、これを無効化してください。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id10">
+<h3>デフォルトのゲームモード勝利条件を有効化<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay7.png" src="../../_images/gameplay7.png" />
+<p>ゲームモードのデフォルト勝利条件ロジックを有効化、または無効化します。
+制限時間に到達する、あるいはチーム、またはプレイヤーが目標スコアに到達すると、勝利条件がチェックされます。
+独自の勝利条件を発動させたい場合には、これを無効化してください。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id11">
+<h3>ボイスオーバーメッセージングを有効化<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay8.png" src="../../_images/gameplay8.png" />
+<p>ゲームモードのボイスメッセージを有効化、または無効化します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id12">
+<h3>ゲームモードを終了<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay9.png" src="../../_images/gameplay9.png" />
+<p>現在のゲームモードを終了し、与えられた <strong>プレイヤーまたはチームId</strong> を指定します。
+チームIdが0に設定されている場合は、ゲームモードが引き分けで終了します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>チームId or プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id13">
+<h3>全プレイヤーの出撃を強制<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay10.png" src="../../_images/gameplay10.png" />
+<p>出撃画面にいる全プレイヤーの出撃を強制させます。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id14">
+<h3>ゲームモードのタイムを停止<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay11.png" src="../../_images/gameplay11.png" />
+<p>指定された <strong>ブール</strong> 入力に基づいて、ゲームモード・タイマーを一時停止したり、解除したりします。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>ブール</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id15">
+<h3>ゲームモードのタイムをリセット<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay12.png" src="../../_images/gameplay12.png" />
+<p>ゲームモードの時間をリセットします。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id16">
+<h3>ゲームモードスコアを設定<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay13.png" src="../../_images/gameplay13.png" />
+<p>指定された <strong>プレイヤーまたはチームId</strong> のゲームモードのスコアを設定します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー or チームId</p></li>
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id17">
+<h3>ゲームモードのタイムリミットを設定<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay14.png" src="../../_images/gameplay14.png" />
+<p>ゲームモードの持続時間を（秒）設定します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id18">
+<h3>ゲームモードのターゲットスコアを設定<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay15.png" src="../../_images/gameplay15.png" />
+<p>勝利を決めるのに使用するゲームモードの目標スコアを設定します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>数値</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id19">
+<h2>全般<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id">
+<h3>チームIDを設定<a class="headerlink" href="#id" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay16.png" src="../../_images/gameplay16.png" />
+<p>指定された <strong>チームIdを使用して、ターゲットプレイヤーのチームを設定します。
+これによりプレイヤー</strong> は強制的に出撃画面に戻されます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>このブロックは「フリー・フォー・オール」ではサポートされておらず、現在AIでは機能しません。</p>
+</div>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>チームId</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id20">
+<h2>兵士<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="id21">
+<h3>キル<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay17.png" src="../../_images/gameplay17.png" />
+<p>ターゲット <strong>プレイヤー</strong> をキルする（ダウン状態をスキップ）。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id22">
+<h3>ターゲットをスポット<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay18.png" src="../../_images/gameplay18.png" />
+<p>指定された持続時間（秒）内に、ターゲット <strong>プレイヤー</strong> をスポットします。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+<li><p>数値（時間）</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id23">
+<h3>ターゲットのスポットをキャンセル<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク"></a></h3>
+<img alt="../../_images/gameplay19.png" src="../../_images/gameplay19.png" />
+<p>ターゲット <strong>プレイヤー</strong> のスポットを解除します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>プレイヤー</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ARRAYS/ARRAYS.html" class="btn btn-neutral float-left" title="配列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-right" title="ロジック" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

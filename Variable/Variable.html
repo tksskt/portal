@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>変数 &mdash; portal  ドキュメント</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/add_style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="配列" href="ARRAYS/ARRAYS.html" />
+    <link rel="prev" title="ユーザーインターフェイス" href="../Action/USER_INTERFACE/USER_INTERFACE.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> portal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Action/Action.html">アクション</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">変数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html">ロジック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html">数式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAYER/PLAYER.html">プレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LITERALS/LITERALS.html">リテラル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">portal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>変数</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Variable/Variable.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>変数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ARRAYS/ARRAYS.html">配列</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id2">配列に追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id3">スライスを配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id4">以下のカウント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id5">現在の配列要素</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id6">空配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id7">フィルター済み配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#first-of">First Of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#is-true-for-all">Is True For All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#is-true-for-any">Is True For Any</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#last-of">Last Of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id8">マップ済み配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id9">ランダム化配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id10">配列内のランダムな値</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id11">ソート済み配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ARRAYS/ARRAYS.html#id12">配列内の値</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="EVENT_PAYLOADS/EVENT_PAYLOADS.html#id2">イベント その他のプレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EVENT_PAYLOADS/EVENT_PAYLOADS.html#id3">イベントプレイヤー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EVENT_PAYLOADS/EVENT_PAYLOADS.html#id4">イベントチーム</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GAMEPLAY/GAMEPLAY.html#id2">ゲームモード</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LOGIC/LOGIC.html">ロジック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#and">And</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id2">＝</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id3">以下よりも大きい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id4">以下よりも大きいまたは等しい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#ifthenelse">IfThenElse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id5">以下よりも小さい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id6">以下よりも小さいまたは等しい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#not">Not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#id7">等しくない</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LOGIC/LOGIC.html#or">Or</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MATH/MATH.html">数式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id2">絶対値</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id3">＋</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id4">アングルの差異</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id5">後方ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id6">角度からのコサイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id7">ラジアンからのコサイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id8">ベクトルを作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id9">クロスプロダクト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id10">アングルからの方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id11">以下への方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id12">以下の間の距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id13">/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id14">ドット積</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id15">下方ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id16">前方ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id17">左ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id18">ワールドからローカルポジションへ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id19">ワールドからローカルベクトルへ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id20">最大</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id21">剰余</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id22">乗算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id23">ノーマル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id24">数乗する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id25">ランダム実数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id26">右ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id27">整数にまとめる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id28">角度からのサイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id29">ラジアンからのサイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id30">平方根</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id31">減算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id32">上方ベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id33">以下へのベクトル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id34">ローカルからワールドポジションへ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id35">ローカルからワールドベクトルへ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#x">Xコンポーネントを取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#z">Zコンポーネントを取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MATH/MATH.html#id36">Zコンポーネントを取得</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PLAYER/PLAYER.html">プレイヤー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PLAYER/PLAYER.html#id2">全般</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAYER/PLAYER.html#id8">兵士</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="USER_INTERFACE/USER_INTERFACE.html#id2">メッセージ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id2">インベントリー：キャラクターの専門技能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id3">カスタムメッセージスロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id4">勢力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id5">プレイヤーの所持アイテムのスロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id6">医療ガジェットのタイプ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id7">インベントリー：格闘武器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id8">インベントリー：オープンガジェット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id9">インベントリー：メインウェポン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id10">入力制限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id11">再補給のタイプ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id12">インベントリー：サブウェポン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id13">プレイヤー兵士</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id14">プレイヤーの状態（ブール）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id15">プレイヤーの状態（数）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id16">プレイヤーの状態（ベクトル）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SELECTION_LISTS/SELECTION_LISTS.html#id17">インベントリー：投擲</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LITERALS/LITERALS.html">リテラル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LITERALS/LITERALS.html#id2">テキスト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LITERALS/LITERALS.html#id4">数値</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LITERALS/LITERALS.html#id6">ブーリアン</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CONVENIENCE/CONVENIENCE.html">コンビニエンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CONVENIENCE/CONVENIENCE.html#id2">配列に含む</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONVENIENCE/CONVENIENCE.html#id3">配列値のインデックス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONVENIENCE/CONVENIENCE.html#id4">配列から削除</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Action/USER_INTERFACE/USER_INTERFACE.html" class="btn btn-neutral float-left" title="ユーザーインターフェイス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ARRAYS/ARRAYS.html" class="btn btn-neutral float-right" title="配列" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, tks.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
