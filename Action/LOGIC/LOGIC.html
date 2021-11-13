@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ロジック &mdash; portal  ドキュメント</title>
+  <title>ロジック(LOGIC) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="プレイヤー" href="../PLAYER/PLAYER.html" />
-    <link rel="prev" title="ゲームプレイ" href="../GAMEPLAY/GAMEPLAY.html" /> 
+    <link rel="next" title="プレイヤー(PLAYER)" href="../PLAYER/PLAYER.html" />
+    <link rel="prev" title="ゲームプレイ(GamePlay)" href="../GAMEPLAY/GAMEPLAY.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,27 +40,27 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール(RULES)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Action.html">アクション</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ロジック</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">ロジック</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">キャンセル</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#if">Ifをキャンセル</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">変数をレートでトラッキング</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">変数を時間経過でトラッキング</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">スキップ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">スキップIf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">変数のトラッキングを停止</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">待機する</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wait-until">Wait Until</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ(GamePlay)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ロジック(LOGIC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ロジック(LOGIC)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#abort">キャンセル(Abort)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#if-abortif">Ifをキャンセル(AbortIf)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackvariableatrate">変数をレートでトラッキング(TrackVariableAtRate)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackvariableovertime">変数を時間経過でトラッキング(TrackVariableOverTime)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#skip">スキップ(Skip)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#if-skipif">スキップIf(SkipIf)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stoptrackingvariable">変数のトラッキングを停止(StopTrackingVariable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wait">待機する(Wait)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wait-until-waituntil">Wait Until(WaitUntil)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー(PLAYER)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェイス(USER INTERFACE)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Variable/Variable.html">変数</a></li>
@@ -81,7 +81,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../Action.html">アクション</a> &raquo;</li>
-      <li>ロジック</li>
+      <li>ロジック(LOGIC)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/Action/LOGIC/LOGIC.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -91,26 +91,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>ロジック<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+  <section id="logic">
+<h1>ロジック(LOGIC)<a class="headerlink" href="#logic" title="このヘッドラインへのパーマリンク"></a></h1>
 <hr class="docutils" />
-<section id="id2">
-<h2>ロジック<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<section id="id3">
-<h3>キャンセル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="id1">
+<h2>ロジック(LOGIC)<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="abort">
+<h3>キャンセル(Abort)<a class="headerlink" href="#abort" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic1.png" src="../../_images/logic1.png" />
-<p><strong>ルールにあるアクション</strong> の実行リストを停止します。</p>
+<p><strong>ルール</strong> にある <strong>アクション</strong> の実行リストを停止します。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="if">
-<h3>Ifをキャンセル<a class="headerlink" href="#if" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="if-abortif">
+<h3>Ifをキャンセル(AbortIf)<a class="headerlink" href="#if-abortif" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic2.png" src="../../_images/logic2.png" />
-<p>与えられている <strong>ブールがTrueである場合、ルールにあるアクションの実行リストを停止します。それ以外の場合は、残りアクション</strong> で実行が継続されます。</p>
+<p>与えられている <strong>ブール(Bool)</strong> がTrueである場合、 <strong>ルール</strong> にある <strong>アクション</strong> の実行リストを停止します。それ以外の場合は、 <strong>アクション</strong> の実行が継続されます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>ブール</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -118,15 +118,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id4">
-<h3>変数をレートでトラッキング<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="trackvariableatrate">
+<h3>変数をレートでトラッキング(TrackVariableAtRate)<a class="headerlink" href="#trackvariableatrate" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic3.png" src="../../_images/logic3.png" />
-<p>指定された率（数値/秒）で <strong>変数</strong> の数値を、与えられた上限に達するまで徐々に変更していきます。</p>
+<p>指定された割合（数値/秒）で <strong>変数(Variable)</strong> の値を、与えられた上限に達するまで徐々に変更していきます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>変数</p></li>
-<li><p>数値（上限）</p></li>
-<li><p>数値（率）</p></li>
+<li><p>変数(Variable)</p></li>
+<li><p>数値(Number)（上限）</p></li>
+<li><p>数値(Number)（割合）</p></li>
 </ul>
 </dd>
 </dl>
@@ -134,15 +134,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id5">
-<h3>変数を時間経過でトラッキング<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="trackvariableovertime">
+<h3>変数を時間経過でトラッキング(TrackVariableOverTime)<a class="headerlink" href="#trackvariableovertime" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic4.png" src="../../_images/logic4.png" />
-<p>時間の経過と共に（秒単位で） <strong>変数</strong> の数値を徐々に変更していきます。変数値はインターバル終了時に上限に到達します。</p>
+<p>時間の経過と共に（秒単位で） <strong>変数(Variable)</strong> の数値を徐々に変更していきます。変数値は期限(インターバル)終了時に上限に到達します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>変数</p></li>
-<li><p>数値（上限）</p></li>
-<li><p>数値（インターバル）</p></li>
+<li><p>変数(Variable)</p></li>
+<li><p>数値(Number)（上限）</p></li>
+<li><p>数値(Number)（インターバル）</p></li>
 </ul>
 </dd>
 </dl>
@@ -150,13 +150,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id6">
-<h3>スキップ<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="skip">
+<h3>スキップ(Skip)<a class="headerlink" href="#skip" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic5.png" src="../../_images/logic5.png" />
-<p>このブロックに続く <strong>ルール内のアクション</strong> を指定数スキップします。</p>
+<p>このブロックに続く <strong>ルール</strong> 内の <strong>アクション</strong> を指定数スキップします。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -164,14 +164,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id7">
-<h3>スキップIf<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="if-skipif">
+<h3>スキップIf(SkipIf)<a class="headerlink" href="#if-skipif" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic6.png" src="../../_images/logic6.png" />
-<p>条件がTrueと評価された場合、このブロックに続く <strong>ルール内のアクションを指定数スキップします。それ以外の場合は、残りのアクション</strong> を実行し続けます。</p>
+<p>条件がTrueと評価された場合、このブロックに続く <strong>ルール</strong> 内の <strong>アクション</strong> を指定数スキップします。
+それ以外の場合は、残りの <strong>アクション</strong> を実行し続けます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>数値</p></li>
-<li><p>ブール</p></li>
+<li><p>数値(Number)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -179,13 +180,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id8">
-<h3>変数のトラッキングを停止<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="stoptrackingvariable">
+<h3>変数のトラッキングを停止(StopTrackingVariable)<a class="headerlink" href="#stoptrackingvariable" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic7.png" src="../../_images/logic7.png" />
-<p>進行中の <strong>変数</strong> のトラッキングを停止し、現在値のまま残します。</p>
+<p>進行中の <strong>変数(Variable)</strong> のトラッキングを停止し、現在値のまま残します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>変数</p></li>
+<li><p>変数(Variable)</p></li>
 </ul>
 </dd>
 </dl>
@@ -193,13 +194,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id9">
-<h3>待機する<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="wait">
+<h3>待機する(Wait)<a class="headerlink" href="#wait" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic8.png" src="../../_images/logic8.png" />
-<p>指定された <strong>数値秒の間ルール内のアクション</strong> の実行を一時停止します。</p>
+<p>指定された <strong>数値(Number)</strong> (秒)の間 <strong>ルール</strong> 内の <strong>アクション</strong> の実行を一時停止します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -207,14 +208,14 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="wait-until">
-<h3>Wait Until<a class="headerlink" href="#wait-until" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="wait-until-waituntil">
+<h3>Wait Until(WaitUntil)<a class="headerlink" href="#wait-until-waituntil" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/logic9.png" src="../../_images/logic9.png" />
-<p>指定された <strong>数値秒の間、または指定された条件がそのインターバルにTrueと判断された場合にルール内のアクション</strong> の実行を一時停止します。</p>
+<p>指定された <strong>数値</strong> (秒)の間、または指定された条件がそのインターバルにTrueと判断された場合に <strong>ルール</strong> 内の <strong>アクション</strong> の実行を一時停止します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>数値</p></li>
-<li><p>ブール</p></li>
+<li><p>数値(Number)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -230,8 +231,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../GAMEPLAY/GAMEPLAY.html" class="btn btn-neutral float-left" title="ゲームプレイ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../PLAYER/PLAYER.html" class="btn btn-neutral float-right" title="プレイヤー" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../GAMEPLAY/GAMEPLAY.html" class="btn btn-neutral float-left" title="ゲームプレイ(GamePlay)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../PLAYER/PLAYER.html" class="btn btn-neutral float-right" title="プレイヤー(PLAYER)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

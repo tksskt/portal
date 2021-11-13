@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>プレイヤー &mdash; portal  ドキュメント</title>
+  <title>プレイヤー(PLAYER) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="ユーザーインターフェイス" href="../USER_INTERFACE/USER_INTERFACE.html" />
-    <link rel="prev" title="ロジック" href="../LOGIC/LOGIC.html" /> 
+    <link rel="next" title="ユーザーインターフェイス(USER INTERFACE)" href="../USER_INTERFACE/USER_INTERFACE.html" />
+    <link rel="prev" title="ロジック(LOGIC)" href="../LOGIC/LOGIC.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,40 +40,40 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール(RULES)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Action.html">アクション</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">プレイヤー</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">入力</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">すべての入力制限を有効化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">入力制限を有効化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ(GamePlay)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック(LOGIC)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">プレイヤー(PLAYER)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inputs">入力(INPUTS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enableallinputrestrictions">すべての入力制限を有効化(EnableAllInputRestrictions)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enableinputrestriction">入力制限を有効化(EnableInputRestriction)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">所持品</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id6">プレイヤーの所持アイテムを置き換える</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">所持アイテムの切り替えを強制</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">所持アイテムの弾薬を設定</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">所持アイテムのマガジン弾薬を設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inventory">所持品(INVENTORY)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#replaceplayerinventory">プレイヤーの所持アイテムを置き換える(ReplacePlayerInventory)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forceswitchinventory">所持アイテムの切り替えを強制(ForceSwitchInventory)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setinventoryammo">所持アイテムの弾薬を設定(SetInventoryAmmo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setinventorymagazineammo">所持アイテムのマガジン弾薬を設定(SetInventoryMagazineAmmo)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">兵士</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id11">医療ガジェットを適用</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">マンダウンを強制</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">蘇生を強制</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">補給</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">回復</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">ダメージ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id17">プレイヤー兵士を設定</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">プレイヤーの最大ライフを設定</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id19">マンダウンをスキップ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id20">テレポート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#soldier">兵士(SOLDIER)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applymedgadget">医療ガジェットを適用(ApplyMedGadget)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forcemandown">マンダウンを強制(ForceMandown)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forcerevive">蘇生を強制(ForceRevive)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resupply">補給(Resupply)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heal">回復(Heal)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dealdamage">ダメージ(DealDamage)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setplayersoldier">プレイヤー兵士を設定(SetPlayerSoldier)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setplayermaxhealth">プレイヤーの最大ライフを設定(SetPlayerMaxHealth)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#skipmandown">マンダウンをスキップ(SkipMandown)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#teleport">テレポート(Teleport)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェイス(USER INTERFACE)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Variable/Variable.html">変数</a></li>
@@ -94,7 +94,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../Action.html">アクション</a> &raquo;</li>
-      <li>プレイヤー</li>
+      <li>プレイヤー(PLAYER)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/Action/PLAYER/PLAYER.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -104,19 +104,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>プレイヤー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+  <section id="player">
+<h1>プレイヤー(PLAYER)<a class="headerlink" href="#player" title="このヘッドラインへのパーマリンク"></a></h1>
 <hr class="docutils" />
-<section id="id2">
-<h2>入力<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<section id="id3">
-<h3>すべての入力制限を有効化<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="inputs">
+<h2>入力(INPUTS)<a class="headerlink" href="#inputs" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="enableallinputrestrictions">
+<h3>すべての入力制限を有効化(EnableAllInputRestrictions)<a class="headerlink" href="#enableallinputrestrictions" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player1.png" src="../../_images/player1.png" />
-<p>ターゲット <strong>プレイヤー</strong> に対する利用可能な入力制限のすべてを有効化、または無効化します。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> に対する利用可能な入力制限のすべてを有効化、または無効化します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>ブール</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -124,15 +124,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id4">
-<h3>入力制限を有効化<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="enableinputrestriction">
+<h3>入力制限を有効化(EnableInputRestriction)<a class="headerlink" href="#enableinputrestriction" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player2.png" src="../../_images/player2.png" />
-<p>ターゲット <strong>プレイヤーでの指定された入力制限アイテム</strong> を有効化、または無効化します。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> の指定された <strong>入力制限アイテム(InputRestrictionsItem)</strong> を有効化、または無効化します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>入力制限アイテム</p></li>
-<li><p>ブール</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>入力制限アイテム(InputRestrictionsItem)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -142,16 +142,22 @@
 </section>
 </section>
 <hr class="docutils" />
-<section id="id5">
-<h2>所持品<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h2>
-<section id="id6">
-<h3>プレイヤーの所持アイテムを置き換える<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="inventory">
+<h2>所持品(INVENTORY)<a class="headerlink" href="#inventory" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="replaceplayerinventory">
+<h3>プレイヤーの所持アイテムを置き換える(ReplacePlayerInventory)<a class="headerlink" href="#replaceplayerinventory" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player3.png" src="../../_images/player3.png" />
-<p>ターゲット <strong>プレイヤー</strong> に新しい所持品アイテムを与えます。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> に新しい所持品アイテムを与えます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>所持アイテムのメインウェポンアイテム or 所持アイテムの補助武器アイテム or 所持アイテムのキャラクター専門技能アイテム or 所持アイテムのオープンガジェットアイテム or 所持アイテムの投擲アイテム or 所持アイテムの格闘武器アイテム</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>所持品アイテム(InventoryItem)
++ 所持アイテムのメインウェポンアイテム(InventoryPrimaryWeaponsItem)
++ 所持アイテムの補助武器アイテム(InventorySecondaryWeaponsItem )
++ 所持アイテムのキャラクター専門技能アイテム(InventoryCharacterSpecialtiesItem )
++ 所持アイテムのオープンガジェットアイテム(InventoryOpenGadgetsItem )
++ 所持アイテムの投擲アイテム(InventoryThrowablesItem )
++ 所持アイテムの格闘武器アイテム(InventoryMeleeWeaponsItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -159,14 +165,14 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id7">
-<h3>所持アイテムの切り替えを強制<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="forceswitchinventory">
+<h3>所持アイテムの切り替えを強制(ForceSwitchInventory)<a class="headerlink" href="#forceswitchinventory" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player4.png" src="../../_images/player4.png" />
-<p>ターゲット <strong>プレイヤーがプレイヤー所持アイテムのスロットアイテム</strong> を与えるように強制させます。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> に提供された <strong>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</strong> に切り替えを強制させます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -174,15 +180,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id8">
-<h3>所持アイテムの弾薬を設定<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="setinventoryammo">
+<h3>所持アイテムの弾薬を設定(SetInventoryAmmo)<a class="headerlink" href="#setinventoryammo" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player5.png" src="../../_images/player5.png" />
-<p>指定された <strong>プレイヤー所持アイテムのスロットアイテムのターゲットプレイヤー</strong> の装填弾数を設定します。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> の指定された <strong>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</strong> の装填済みの弾数を設定します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
-<li><p>数値</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -190,15 +196,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id9">
-<h3>所持アイテムのマガジン弾薬を設定<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="setinventorymagazineammo">
+<h3>所持アイテムのマガジン弾薬を設定(SetInventoryMagazineAmmo)<a class="headerlink" href="#setinventorymagazineammo" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player6.png" src="../../_images/player6.png" />
-<p>指定された <strong>プレイヤー所持アイテムのスロットアイテムのターゲットプレイヤー</strong> のマガジン弾薬数を設定します。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> の指定された <strong>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</strong> のマガジン弾薬数を設定します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>プレイヤー所持アイテムのスロットアイテム</p></li>
-<li><p>数値</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>プレイヤー所持アイテムのスロットアイテム(PlayerInventorySlotsItem)</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -208,19 +214,19 @@
 </section>
 </section>
 <hr class="docutils" />
-<section id="id10">
-<h2>兵士<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="soldier">
+<h2>兵士(SOLDIER)<a class="headerlink" href="#soldier" title="このヘッドラインへのパーマリンク"></a></h2>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<section id="id11">
-<h3>医療ガジェットを適用<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="applymedgadget">
+<h3>医療ガジェットを適用(ApplyMedGadget)<a class="headerlink" href="#applymedgadget" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player7.png" src="../../_images/player7.png" />
-<p>医療ガジェットの効果をターゲット <strong>プレイヤー</strong> に適用します。</p>
+<p>医療ガジェットの効果をターゲット <strong>プレイヤー(Player)</strong> に適用します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>医療ガジェットタイプアイテム</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>医療ガジェットタイプアイテム(MedGadgetTypesItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -228,13 +234,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id12">
-<h3>マンダウンを強制<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="forcemandown">
+<h3>マンダウンを強制(ForceMandown)<a class="headerlink" href="#forcemandown" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player8.png" src="../../_images/player8.png" />
-<p>ターゲット <strong>プレイヤー</strong> を「ダウン」状態にします（「ダウン」状態が無効化されている場合を除く）。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> を「ダウン」状態にします（「ダウン」状態が無効化されている場合を除く）。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
+<li><p>プレイヤー(Player)</p></li>
 </ul>
 </dd>
 </dl>
@@ -242,13 +248,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id13">
-<h3>蘇生を強制<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="forcerevive">
+<h3>蘇生を強制(ForceRevive)<a class="headerlink" href="#forcerevive" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player9.png" src="../../_images/player9.png" />
-<p>「ダウン」状態にあるターゲット <strong>プレイヤー</strong> を復活させます。</p>
+<p>「ダウン」状態にあるターゲット <strong>プレイヤー(Player)</strong> を復活させます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
+<li><p>プレイヤー(Player)</p></li>
 </ul>
 </dd>
 </dl>
@@ -256,14 +262,14 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id14">
-<h3>補給<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="resupply">
+<h3>補給(Resupply)<a class="headerlink" href="#resupply" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player10.png" src="../../_images/player10.png" />
-<p>指定された <strong>再補給のタイプアイテムを使用して、ターゲットプレイヤー</strong> を再補給します。</p>
+<p>指定された <strong>再補給のタイプアイテム(ResupplyTypesItem)</strong> を使用して、ターゲットプレイヤー** に再補給します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>再補給のタイプアイテム</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>再補給のタイプアイテム(ResupplyTypesItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -271,15 +277,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id15">
-<h3>回復<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="heal">
+<h3>回復(Heal)<a class="headerlink" href="#heal" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player11.png" src="../../_images/player11.png" />
-<p>回復者 <strong>プレイヤーがターゲットプレイヤー</strong> に与えられる瞬間的なライフの回復量を設定します。</p>
+<p>回復者 <strong>プレイヤー</strong> がターゲット <strong>プレイヤー</strong> に与えられる瞬間的なライフの回復量を設定します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー（ターゲット）</p></li>
-<li><p>数値</p></li>
-<li><p>(オプショナル)プレイヤー（回復者）</p></li>
+<li><p>プレイヤー(Player)（ターゲット）</p></li>
+<li><p>数値(Number)</p></li>
+<li><p>(オプショナル)プレイヤー(Player)（回復者）</p></li>
 </ul>
 </dd>
 </dl>
@@ -287,15 +293,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id16">
-<h3>ダメージ<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="dealdamage">
+<h3>ダメージ(DealDamage)<a class="headerlink" href="#dealdamage" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player12.png" src="../../_images/player12.png" />
-<p>攻撃者 <strong>プレイヤーのターゲットプレイヤー</strong> に与えるダメージ量を設定します。</p>
+<p>攻撃する <strong>プレイヤー(Player)</strong> がターゲット <strong>プレイヤー(Player)</strong> に与えるダメージ量を設定します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー（ターゲット）</p></li>
-<li><p>数値</p></li>
-<li><p>(オプショナル)プレイヤー（提供者）</p></li>
+<li><p>プレイヤー(Player)（ターゲット）</p></li>
+<li><p>数値(Number)</p></li>
+<li><p>(オプショナル)プレイヤー(Player)（提供者）</p></li>
 </ul>
 </dd>
 </dl>
@@ -303,16 +309,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id17">
-<h3>プレイヤー兵士を設定<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="setplayersoldier">
+<h3>プレイヤー兵士を設定(SetPlayerSoldier)<a class="headerlink" href="#setplayersoldier" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player13.png" src="../../_images/player13.png" />
-<p>指定された <strong>プレイヤーを使用する兵士をプレイヤー兵士アイテム</strong> ターゲットに設定します。
+<p>指定された <strong>プレイヤー(Player)</strong> の使用する兵士を <strong>プレイヤー兵士アイテム(PlayerSoldiersItem)</strong> で設定します。
 選択した兵士は、そのプレイヤーチームの勢力から使用可能な兵士でなければなりません。
-選択しない場合、選択した兵士は設定されません。（_例：チームの勢力がバッドカンパニー2 アメリカ軍の場合、そのプレイヤーはバッドカンパニー2 <a href="#id21"><span class="problematic" id="id22">アメリカ兵_のみ選択できます_</span></a>）</p>
+選択しない場合、選択した兵士は設定されません。 <em>（例：チームの勢力がバッドカンパニー2 アメリカ軍の場合、そのプレイヤーはバッドカンパニー2 アメリカ兵のみ選択できます）</em></p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>プレイヤー兵士アイテム</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>プレイヤー兵士アイテム(PlayerSoldiersItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -320,15 +326,18 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id18">
-<h3>プレイヤーの最大ライフを設定<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="setplayermaxhealth">
+<h3>プレイヤーの最大ライフを設定(SetPlayerMaxHealth)<a class="headerlink" href="#setplayermaxhealth" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player14.png" src="../../_images/player14.png" />
-<p>ターゲット <strong>プレイヤー</strong> の最大ライフを設定します。
-メモ：プレイヤーの最大ライフが1000を超えることはできません。</p>
+<p>ターゲット <strong>プレイヤー(Player)</strong> の最大ライフを設定します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>プレイヤーの最大ライフが1000を超えることはできません。</p>
+</div>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>数値</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -336,14 +345,14 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id19">
-<h3>マンダウンをスキップ<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="skipmandown">
+<h3>マンダウンをスキップ(SkipMandown)<a class="headerlink" href="#skipmandown" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player15.png" src="../../_images/player15.png" />
 <p>ダウン状態をスキップし、キルされたときに出撃画面に直接移動するように、ターゲット <strong>プレイヤー</strong> を設定します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>ブール</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -351,15 +360,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id20">
-<h3>テレポート<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="teleport">
+<h3>テレポート(Teleport)<a class="headerlink" href="#teleport" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../../_images/player16.png" src="../../_images/player16.png" />
-<p>ターゲットを指定された有効な位置にテレポートします。</p>
+<p>有効な範囲内でターゲットをテレポートします。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー</p></li>
-<li><p>ヴェクター（位置）</p></li>
-<li><p>数値（ヨー軸回転）</p></li>
+<li><p>プレイヤー(Player)</p></li>
+<li><p>ヴェクター(Vector)（位置）</p></li>
+<li><p>数値(Number)（ヨー軸回転）</p></li>
 </ul>
 </dd>
 </dl>
@@ -371,8 +380,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-left" title="ロジック" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../USER_INTERFACE/USER_INTERFACE.html" class="btn btn-neutral float-right" title="ユーザーインターフェイス" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-left" title="ロジック(LOGIC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../USER_INTERFACE/USER_INTERFACE.html" class="btn btn-neutral float-right" title="ユーザーインターフェイス(USER INTERFACE)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

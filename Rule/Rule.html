@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ルール &mdash; portal  ドキュメント</title>
+  <title>ルール(RULES) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/add_style.css" type="text/css" />
@@ -40,13 +40,13 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ルール</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">ルール</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">ルール</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id4"><strong>ルール</strong> ブロックイベントの種類</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ルール(RULES)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">ルール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rule">ルール(RULE)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><strong>ルール</strong> ブロックイベントの種類</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condition">条件(CONDITION)</a></li>
 </ul>
 </li>
 </ul>
@@ -69,7 +69,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>ルール</li>
+      <li>ルール(RULES)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Rule/Rule.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -79,13 +79,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>ルール<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+  <section id="rules">
+<h1>ルール(RULES)<a class="headerlink" href="#rules" title="このヘッドラインへのパーマリンク"></a></h1>
 <hr class="docutils" />
-<section id="id2">
-<h2>ルール<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<section id="id3">
-<h3>ルール<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="id1">
+<h2>ルール<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="rule">
+<h3>ルール(RULE)<a class="headerlink" href="#rule" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../_images/rule.png" src="../_images/rule.png" />
 <p><strong>ルールブロックは、ゲーム内のイベントからトリガーされます。
 イベントがトリガーされると、このブロックはその条件が満たされているかどうかを確認し、アクションのすべてを実行します。</strong></p>
@@ -95,83 +95,83 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<section id="id4">
-<h4><strong>ルール</strong> ブロックイベントの種類<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h4>
+<section id="id2">
+<h4><strong>ルール</strong> ブロックイベントの種類<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h4>
 <dl>
-<dt>開催中</dt><dd><div class="line-block">
-<div class="line">開催中 イベントタイプは、 <strong>その条件</strong> がTrueになったかどうかを継続的にチェックします。</div>
-<div class="line">その場合、 <strong>アクションが一度だけ実行されます。</strong></div>
-<div class="line"><strong>イベントが再び実行されるには、条件</strong> が再びTrueになる前にFalseになる必要があります。</div>
-<div class="line">開催中 イベントタイプは、 <strong>全体、プレイヤー、チームのコンテキスト</strong> に存在します。</div>
-<div class="line">プレイヤーとチームコンテキスト内では、イベントプレイヤーやイベントチームなどのペイロード値ブロックを使用して、イベント内の特定のプレイヤーやチームを参照することができます。</div>
+<dt>開催中(Ongoing)</dt><dd><div class="line-block">
+<div class="line">開催中(Ongoing) イベントタイプは、指定された <strong>条件</strong> がTrueになったかどうかを継続的にチェックします。</div>
+<div class="line">Trueになった場合、 <strong>アクション</strong> が <strong>一度だけ実行</strong> されます。</div>
+<div class="line"><strong>イベントが再び実行されるには、条件が再びTrueになる前にFalseになる必要があります。</strong></div>
+<div class="line">開催中(Ongoing) イベントタイプは、 <strong>全体(Global)、プレイヤー(Player)、チーム(Team)のコンテキスト</strong> が存在します。</div>
+<div class="line">プレイヤー(Player)とチーム(Team)コンテキスト内では、イベントプレイヤーやイベントチームなどのペイロードブロック(Event Payloads)を使用して、イベント内の特定のプレイヤーやチームを参照することができます。</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>注：FFAでは、開催中 チームは一切実行されません。</p>
+<p>注：FFAの開催中(Ongoing)イベントはチーム(Team)コンテキストは一切実行されません。</p>
 </div>
 </dd>
-<dt>プレイヤー被キル時</dt><dd><div class="line-block">
-<div class="line">これは <strong>プレイヤー</strong> がキルされるたびにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー（キルされたプレイヤー）、イベント その他のプレイヤー（キルを行ったプレイヤー）</div>
+<dt>プレイヤー被キル時(OnPlayerDied)</dt><dd><div class="line-block">
+<div class="line">これは <strong>プレイヤー(Player)</strong> がキルされるたびにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer)（キルされたプレイヤー）、その他のイベントプレイヤー(EventOtherPlayer)（キルを行ったプレイヤー）</div>
 </div>
 </dd>
-<dt>プレイヤー出撃時</dt><dd><div class="line-block">
-<div class="line">これは、 <strong>プレイヤー</strong> が出撃するたびにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー （出撃したプレイヤー）</div>
+<dt>プレイヤー出撃時(OnPlayerDeployed)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> が出撃するたびにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer) （出撃したプレイヤー）</div>
 </div>
 </dd>
-<dt>プレイヤーのゲーム参加時</dt><dd><div class="line-block">
-<div class="line">これは、 <strong>プレイヤー</strong> がゲームに参加した時にトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー（参加したプレイヤー）</div>
+<dt>プレイヤーのゲーム参加時(OnPlayerJoinGame)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> がゲームに参加した時にトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer)（参加したプレイヤー）</div>
 </div>
 </dd>
-<dt>プレイヤーのゲーム離脱時</dt><dd><div class="line-block">
-<div class="line">これは、プレイヤーがゲームを離脱したときにトリガーされます。</div>
+<dt>プレイヤーのゲーム離脱時(OnPlayerLeaveGame)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> がゲームを離脱したときにトリガーされます。</div>
 </div>
 </dd>
-<dt>プレイヤーキル時</dt><dd><div class="line-block">
-<div class="line">これは、 <strong>プレイヤー</strong> が <strong>他のプレイヤー</strong> に対してキルを獲得したときにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー（キルを行ったプレイヤー）、イベント その他のプレイヤー（キルされたプレイヤー）</div>
+<dt>プレイヤーキル時(OnPlayerEarnedKill)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> が他のプレイヤーに対してキルを獲得したときにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer)（キルを行ったプレイヤー）、その他のイベントプレイヤー(EventOtherPlayer)（キルされたプレイヤー）</div>
 </div>
 </dd>
-<dt>ゲームモード終了時</dt><dd><div class="line-block">
+<dt>ゲームモード終了時(OnGameModeEnding)</dt><dd><div class="line-block">
 <div class="line">ゲームモード終了時にトリガーされます。</div>
 </div>
 </dd>
-<dt>ダウン時</dt><dd><div class="line-block">
-<div class="line">これは、 <strong>プレイヤー</strong> が強制的にダウン状態になったときにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー（ダウンしたプレイヤー）</div>
+<dt>ダウン時(OnMandown)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> が強制的にダウン状態になったときにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer)（ダウンしたプレイヤー）</div>
 </div>
 </dd>
-<dt>蘇生時</dt><dd><div class="line-block">
-<div class="line">これは、 <strong>プレイヤーが他のプレイヤー</strong> によって蘇生されたときにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー（蘇生されたプレイヤー）、イベント その他のプレイヤー（蘇生したプレイヤー）</div>
+<dt>蘇生時(OnRevived)</dt><dd><div class="line-block">
+<div class="line">これは、 <strong>プレイヤー(Player)</strong> が他のプレイヤーによって蘇生されたときにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer)（蘇生されたプレイヤー）、その他のイベントプレイヤー(EventOtherPlayer)（蘇生したプレイヤー）</div>
 </div>
 </dd>
-<dt>制限時間経過時</dt><dd><div class="line-block">
+<dt>制限時間経過時(OnTimeLimitReached)</dt><dd><div class="line-block">
 <div class="line">ゲームモードの制限時間に達したときにトリガーされます。</div>
 </div>
 </dd>
-<dt>ゲームモード開始時</dt><dd><div class="line-block">
+<dt>ゲームモード開始時(OnGameModeStared)</dt><dd><div class="line-block">
 <div class="line">ゲームモードの開始時にトリガーされます。</div>
 </div>
 </dd>
-<dt>プレイヤー死亡時</dt><dd><div class="line-block">
-<div class="line">これは、<strong>プレイヤー</strong> がキルされて出撃画面に戻ったときにトリガーされます。</div>
-<div class="line">ペイロード：イベントプレイヤー （キルされたプレイヤー）</div>
+<dt>プレイヤー死亡時(OnPlayerIrreversibilyDead)</dt><dd><div class="line-block">
+<div class="line">これは、<strong>プレイヤー(Player)</strong> がキルされて出撃画面に戻ったときにトリガーされます。</div>
+<div class="line">ペイロード：イベントプレイヤー(EventPlayer) （キルされたプレイヤー）</div>
 </div>
 </dd>
 </dl>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id5">
-<h3>条件<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="condition">
+<h3>条件(CONDITION)<a class="headerlink" href="#condition" title="このヘッドラインへのパーマリンク"></a></h3>
 <img alt="../_images/condition.png" src="../_images/condition.png" />
-<p><strong>ブールの入力に基づいて、ルールまたはサブルーチン</strong> を実行するための条件を評価します。</p>
+<p><strong>ブール(Bool)</strong> の入力に基づいて、 <strong>ルール</strong> または <strong>サブルーチン</strong> を実行するための条件を評価します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>ブール</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
