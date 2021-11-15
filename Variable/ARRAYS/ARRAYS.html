@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>配列 &mdash; portal  ドキュメント</title>
+  <title>配列(ARRAYS) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
@@ -43,22 +43,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール(RULES)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション(ACTIONS)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">配列</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">配列に追加</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">スライスを配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">以下のカウント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">現在の配列要素</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">空配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">フィルター済み配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#first-of">First Of</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#is-true-for-all">Is True For All</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#is-true-for-any">Is True For Any</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#last-of">Last Of</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">マップ済み配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">ランダム化配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">配列内のランダムな値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">ソート済み配列</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">配列内の値</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">配列(ARRAYS)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#appendtoarray">配列に追加(AppendToArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrayslice">スライスを配列(ArraySlice)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#countof">以下のカウント(CountOf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#currentarrayelement">現在の配列要素(CurrentArrayElement)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emptyarray">空配列(EmptyArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filteredarray">フィルター済み配列(FilteredArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-of-firstof">First Of(FirstOf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-true-for-all-istrueforall">Is True For All(IsTrueForAll)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-true-for-any-istrueforany">Is True For Any(IsTrueForAny)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-of-lastof">Last Of(LastOf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mappedarray">マップ済み配列(MappedArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#randomizedarray">ランダム化配列(RandomizedArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#randomvalueinarray">配列内のランダムな値(RandomValueInArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sortedarray">ソート済み配列(SortedArray)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valueinarray">配列内の値(ValueInArray)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
@@ -90,7 +90,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../Variable.html">変数</a> &raquo;</li>
-      <li>配列</li>
+      <li>配列(ARRAYS)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/Variable/ARRAYS/ARRAYS.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -100,20 +100,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>配列<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+  <section id="arrays">
+<h1>配列(ARRAYS)<a class="headerlink" href="#arrays" title="このヘッドラインへのパーマリンク"></a></h1>
 <hr class="docutils" />
-<section id="id2">
-<h2>配列に追加<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>与えられた数値が末尾に付いた <strong>配列</strong> のコピーを返します。</p>
+<section id="appendtoarray">
+<h2>配列に追加(AppendToArray)<a class="headerlink" href="#appendtoarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた値を配列の最後に追加した <strong>配列(Array)</strong> のコピーを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -121,18 +121,18 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id3">
-<h2>スライスを配列<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定されたインデックス範囲にある数値のみを含んだ指定 <strong>配列</strong> のコピーを返します。</p>
+<section id="arrayslice">
+<h2>スライスを配列(ArraySlice)<a class="headerlink" href="#arrayslice" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたインデックス範囲(開始インデックス - カウント)にある値を含んだ <strong>配列(Array)</strong> のコピーを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>数値（インデックスを開始）</p></li>
-<li><p>数値（数）</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>数値(Number)（開始インデックス）</p></li>
+<li><p>数値(Number)（カウント）</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -140,16 +140,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id4">
-<h2>以下のカウント<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列内にある要素の数値</strong> を返します。</p>
+<section id="countof">
+<h2>以下のカウント(CountOf)<a class="headerlink" href="#countof" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> 内にある要素の <strong>数値(Number)</strong> を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -157,12 +157,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id5">
-<h2>現在の配列要素<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>参照値を、求められている現在の <strong>配列</strong> 要素に返します。フィルター済み配列、マップ済み配列、ソート済み配列、Is True For AllおよびIs True For Anyのみに対して使用されます。</p>
+<section id="currentarrayelement">
+<h2>現在の配列要素(CurrentArrayElement)<a class="headerlink" href="#currentarrayelement" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>現在の <strong>配列(Array)</strong> 要素を返します。
+フィルター済み配列(FilteredArray)、マップ済み配列(MappedArray)、ソート済み配列(SortedArray)、IsTrueForAllおよびIsTrueForAnyのみに対して使用できます。</p>
 <dl class="simple">
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>あらゆるタイプ</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 </dl>
@@ -170,12 +171,12 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id6">
-<h2>空配列<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>初期化された空の <strong>配列</strong> を返します。</p>
+<section id="emptyarray">
+<h2>空配列(EmptyArray)<a class="headerlink" href="#emptyarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>初期化された空の <strong>配列(Array)</strong> を返します。</p>
 <dl class="simple">
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -183,37 +184,22 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id7">
-<h2>フィルター済み配列<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>与えられた条件に基づいて指定された <strong>配列のフィルターされたバージョン</strong> を返します。
-このブロックは配列全体を循環します。現在の配列要素ブロックを利用して、それぞれの反復に対する配列での要素を表すことができます。
-プレイヤーを取得のような配列に対しては、現在の配列要素が該当の配列内の各プレイヤーを表します。その後、そのプレイヤーの特性に基いた独自のフィルター条件を作ることができます
-（例：スコア、または一部のカスタムプレイヤー変数値）。</p>
-<dl class="simple">
-<dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ</p></li>
-</ul>
-</dd>
-<dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-</ul>
-</dd>
-</dl>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-</section>
-<section id="first-of">
-<h2>First Of<a class="headerlink" href="#first-of" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> の最初の数値を返します。</p>
+<section id="filteredarray">
+<h2>フィルター済み配列(FilteredArray)<a class="headerlink" href="#filteredarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた条件に基づいて指定された <strong>配列(Array)</strong> のフィルターされたバージョンを返します。
+このブロックは配列全体を循環します。
+<strong>現在の配列要素(CurrentArrayElement)</strong> ブロックを利用して、反復ごとに配列内の要素を示すことができます。
+<strong>プレイヤーを取得(GetPlayers)</strong> のような配列に対しては、 <strong>現在の配列要素(CurrentArrayElement)</strong> は配列内の各プレイヤーを表します。
+次に、そのプレイヤーのプロパティに基いた独自のフィルター条件を作ることができます
+（スコア、または一部のカスタムプレイヤー変数値など）。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)(条件)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -221,17 +207,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="is-true-for-all">
-<h2>Is True For All<a class="headerlink" href="#is-true-for-all" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> のすべての要素について、指定された条件がTrueであれば、Trueを返します。</p>
+<section id="first-of-firstof">
+<h2>First Of(FirstOf)<a class="headerlink" href="#first-of-firstof" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> の先頭の値を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>ブール</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>ブール</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 </dl>
@@ -239,17 +224,17 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="is-true-for-any">
-<h2>Is True For Any<a class="headerlink" href="#is-true-for-any" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された条件が、指定された <strong>配列</strong> の中の少なくとも1つの要素についてTrueである場合、Trueを返します。</p>
+<section id="is-true-for-all-istrueforall">
+<h2>Is True For All(IsTrueForAll)<a class="headerlink" href="#is-true-for-all-istrueforall" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> のすべての要素について、指定された条件がTrueであれば、Trueを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>ブール</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>ブール</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -257,16 +242,17 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="last-of">
-<h2>Last Of<a class="headerlink" href="#last-of" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> の最後の値を返します。</p>
+<section id="is-true-for-any-istrueforany">
+<h2>Is True For Any(IsTrueForAny)<a class="headerlink" href="#is-true-for-any-istrueforany" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された条件が、指定された <strong>配列(Array)</strong> の中の少なくとも1つの要素についてTrueである場合、Trueを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>あらゆるタイプ</p></li>
+<li><p>ブール(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -274,18 +260,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id8">
-<h2>マップ済み配列<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> のコピーを、提供されたマップ済みの表現を使って評価された値で返します。
-次の例では、プレイヤーを取得 <strong>配列にゲームモードスコアを取得と現在の配列要素を加えて、プレイヤースコアの配列</strong> を返します。</p>
+<section id="last-of-lastof">
+<h2>Last Of(LastOf)<a class="headerlink" href="#last-of-lastof" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> の最後の値を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ（マップ済みの表現）</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 </dl>
@@ -293,16 +277,18 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id9">
-<h2>ランダム化配列<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> のコピーを、値をランダムな順序で並べて返します。</p>
+<section id="mappedarray">
+<h2>マップ済み配列(MappedArray)<a class="headerlink" href="#mappedarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定されたマップ済みの表現を使って評価された値を含む <strong>配列(Array)</strong> のコピーを返します。
+次の例では、 <strong>プレイヤーを取得(GetPlayers)</strong> <strong>配列(Array)</strong> に <strong>ゲームモードスコアを取得(GetGameModeScore)</strong> と <strong>現在の配列要素(CurrentArrayElement)</strong> を加えて、 <strong>プレイヤー(Player)</strong> スコアの <strong>配列(Array)</strong> を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)（マップ済みの表現）</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -310,16 +296,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id10">
-<h2>配列内のランダムな値<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> の中からランダムな値を返します。</p>
+<section id="randomizedarray">
+<h2>ランダム化配列(RandomizedArray)<a class="headerlink" href="#randomizedarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> のコピーを、値をランダムな順序で並べて返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>
@@ -327,19 +313,16 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id11">
-<h2>ソート済み配列<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>並び替え（昇順）する <strong>数値</strong> 値を与えると、指定した <strong>配列</strong> の並び替えられたバージョンを返します。
-現在の配列要素は <strong>配列</strong> の各値を表すために使用できます。
-次の例では、現在の配列要素はプレイヤーを取得の各プレイヤーを表し、 <strong>ゲームモードスコアを取得</strong> は <strong>現在の配列要素</strong> と共に使用され、 <strong>配列</strong> を昇順で並び替えるためのランクとして使用されるスコアを返します。</p>
+<section id="randomvalueinarray">
+<h2>配列内のランダムな値(RandomValueInArray)<a class="headerlink" href="#randomvalueinarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> の中からランダムな値を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>数値（ランク）</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 </dl>
@@ -347,17 +330,38 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id12">
-<h2>配列内の値<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> のインデックスで見つかった値を返します。</p>
+<section id="sortedarray">
+<h2>ソート済み配列(SortedArray)<a class="headerlink" href="#sortedarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>並び替え（昇順）する <strong>数値(Number)</strong> を与えると、指定した <strong>配列(Array)</strong> の並び替えられたバージョンを返します。
+<strong>現在の配列要素(CurrentArrayElement)</strong> を使用して <strong>配列(Array)</strong> の各値を表すことができます。
+次の例では、 <strong>現在の配列要素(CurrentArrayElement)</strong> は <strong>プレイヤーを取得(GetPlayers)</strong> の各プレイヤーを表すために使用しています。
+<strong>ゲームモードスコアを取得(GetGameModeScore)</strong> は <strong>現在の配列要素(CurrentArrayElement)</strong> と共に使用され、ランクとして使用されるスコアを返し <strong>配列(Array)</strong> を昇順で並び替えるます。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>数値</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>数値(Number)（ランク）</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="valueinarray">
+<h2>配列内の値(ValueInArray)<a class="headerlink" href="#valueinarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p><strong>配列(Array)</strong> の指定されたインデックスで見つかった値を返します。</p>
+<dl class="simple">
+<dt>パラメーター</dt><dd><ul class="simple">
+<li><p>配列(Array)</p></li>
+<li><p>数値(Number)</p></li>
+</ul>
+</dd>
+<dt>戻り値</dt><dd><ul class="simple">
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 </dl>

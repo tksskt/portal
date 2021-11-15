@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>コンビニエンス &mdash; portal  ドキュメント</title>
+  <title>コンビニエンス(CONVENIENCE) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール(RULES)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション(ACTIONS)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列(ARRAYS)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GAMEPLAY/GAMEPLAY.html">ゲームプレイ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
@@ -52,10 +52,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">コンビニエンス</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">配列に含む</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">配列値のインデックス</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">配列から削除</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">コンビニエンス(CONVENIENCE)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arraycontains">配列に含む(ArrayContains)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexofarrayvalue">配列値のインデックス(IndexOfArrayValue)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removefromarray">配列から削除(RemoveFromArray)</a></li>
 </ul>
 </li>
 </ul>
@@ -77,7 +77,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../Variable.html">変数</a> &raquo;</li>
-      <li>コンビニエンス</li>
+      <li>コンビニエンス(CONVENIENCE)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/Variable/CONVENIENCE/CONVENIENCE.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,19 +87,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>コンビニエンス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
-<section id="id2">
-<h2>配列に含む<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>与えられた <strong>配列</strong> が指定された数値を含むかどうかに基づいて <strong>ブール</strong> の数値を返します。</p>
+  <section id="convenience">
+<h1>コンビニエンス(CONVENIENCE)<a class="headerlink" href="#convenience" title="このヘッドラインへのパーマリンク"></a></h1>
+<section id="arraycontains">
+<h2>配列に含む(ArrayContains)<a class="headerlink" href="#arraycontains" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>与えられた <strong>配列(Array)</strong> が指定された値を含むかどうかに基づいて <strong>ブール(Bool)</strong> の数値を返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>ブール</p></li>
+<li><p>ブール(Bool)</p></li>
 </ul>
 </dd>
 </dl>
@@ -107,17 +107,17 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id3">
-<h2>配列値のインデックス<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
-<p><strong>配列</strong> の値のインデックスを返します。</p>
+<section id="indexofarrayvalue">
+<h2>配列値のインデックス(IndexOfArrayValue)<a class="headerlink" href="#indexofarrayvalue" title="このヘッドラインへのパーマリンク"></a></h2>
+<p><strong>配列(Array)</strong> の値のインデックスを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -125,17 +125,17 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id4">
-<h2>配列から削除<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h2>
-<p>指定された <strong>配列</strong> のコピーから指定された値を取り除いたものを返します。</p>
+<section id="removefromarray">
+<h2>配列から削除(RemoveFromArray)<a class="headerlink" href="#removefromarray" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>指定された <strong>配列(Array)</strong> のコピーから指定された値を取り除いたものを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>配列</p></li>
-<li><p>あらゆるタイプ</p></li>
+<li><p>配列(Array)</p></li>
+<li><p>あらゆるタイプ(Any Type)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>配列</p></li>
+<li><p>配列(Array)</p></li>
 </ul>
 </dd>
 </dl>

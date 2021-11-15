@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ゲームプレイ &mdash; portal  ドキュメント</title>
+  <title>ゲームプレイ(GAMEPLAY) &mdash; portal  ドキュメント</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/add_style.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="ロジック" href="../LOGIC/LOGIC.html" />
-    <link rel="prev" title="イベントのペイロード" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" /> 
+    <link rel="next" title="ロジック(LOGIC)" href="../LOGIC/LOGIC.html" />
+    <link rel="prev" title="イベントのペイロード(EVENT PAYLOADS)" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,27 +43,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Rule/Rule.html">ルール(RULES)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Action/Action.html">アクション(ACTIONS)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Variable.html">変数</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ゲームプレイ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">ゲームモード</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">ゲームモードスコアを取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">ゲームモードの残り時間を取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">ゲームモードのタイムリミットを取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">ゲームモード目標スコアを取得</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#is">Is勢力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ARRAYS/ARRAYS.html">配列(ARRAYS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html">イベントのペイロード(EVENT PAYLOADS)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ゲームプレイ(GAMEPLAY)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gamemode">ゲームモード(GAMEMODE)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getgamemodescore">ゲームモードスコアを取得(GetGameModeScore)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getgamemodetimeremaining">ゲームモードの残り時間を取得(GetGameModeTimeRemaining)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getgamemodetimelimit">ゲームモードのタイムリミットを取得(GetGameModeTimeLimit)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getgamemodetargetscore">ゲームモード目標スコアを取得(GetGameModeTargetScore)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#is-isfaction">Is勢力(IsFaction)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../MATH/MATH.html">数式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LOGIC/LOGIC.html">ロジック(LOGIC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MATH/MATH.html">数式(MATH)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../OTHER/OTHER.html">その他</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLAYER/PLAYER.html">プレイヤー(PLAYER)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../USER_INTERFACE/USER_INTERFACE.html">ユーザーインターフェース(USER INTERFACE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SELECTION_LISTS/SELECTION_LISTS.html">選択リスト(SELECTION LISTS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LITERALS/LITERALS.html">リテラル(LITERALS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONVENIENCE/CONVENIENCE.html">コンビニエンス(CONVENIENCE)</a></li>
 </ul>
 </li>
 </ul>
@@ -83,7 +83,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../Variable.html">変数</a> &raquo;</li>
-      <li>ゲームプレイ</li>
+      <li>ゲームプレイ(GAMEPLAY)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/Variable/GAMEPLAY/GAMEPLAY.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,21 +93,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id1">
-<h1>ゲームプレイ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+  <section id="gameplay">
+<h1>ゲームプレイ(GAMEPLAY)<a class="headerlink" href="#gameplay" title="このヘッドラインへのパーマリンク"></a></h1>
 <hr class="docutils" />
-<section id="id2">
-<h2>ゲームモード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
-<section id="id3">
-<h3>ゲームモードスコアを取得<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h3>
-<p>指定した <strong>プレイヤー</strong> または <strong>チームId</strong> の現在のゲームモードスコアを返します。</p>
+<section id="gamemode">
+<h2>ゲームモード(GAMEMODE)<a class="headerlink" href="#gamemode" title="このヘッドラインへのパーマリンク"></a></h2>
+<section id="getgamemodescore">
+<h3>ゲームモードスコアを取得(GetGameModeScore)<a class="headerlink" href="#getgamemodescore" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>指定した <strong>プレイヤー(Player)</strong> または <strong>チームId(TeamId)</strong> の現在のゲームモードスコアを返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>プレイヤー or チームId</p></li>
+<li><p>プレイヤー(Player) or チームId(TeamId)</p></li>
 </ul>
 </dd>
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -115,12 +115,12 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id4">
-<h3>ゲームモードの残り時間を取得<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="getgamemodetimeremaining">
+<h3>ゲームモードの残り時間を取得(GetGameModeTimeRemaining)<a class="headerlink" href="#getgamemodetimeremaining" title="このヘッドラインへのパーマリンク"></a></h3>
 <p>現在のゲームモードの残り時間（秒）を返します。</p>
 <dl class="simple">
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -128,12 +128,12 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id5">
-<h3>ゲームモードのタイムリミットを取得<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="getgamemodetimelimit">
+<h3>ゲームモードのタイムリミットを取得(GetGameModeTimeLimit)<a class="headerlink" href="#getgamemodetimelimit" title="このヘッドラインへのパーマリンク"></a></h3>
 <p>ゲームモードに設定された制限時間（秒）を返します。</p>
 <dl class="simple">
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -141,12 +141,12 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="id6">
-<h3>ゲームモード目標スコアを取得<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク"></a></h3>
+<section id="getgamemodetargetscore">
+<h3>ゲームモード目標スコアを取得(GetGameModeTargetScore)<a class="headerlink" href="#getgamemodetargetscore" title="このヘッドラインへのパーマリンク"></a></h3>
 <p>勝利に必要なゲームモードの目標スコアを返します。</p>
 <dl class="simple">
 <dt>戻り値</dt><dd><ul class="simple">
-<li><p>数値</p></li>
+<li><p>数値(Number)</p></li>
 </ul>
 </dd>
 </dl>
@@ -154,13 +154,13 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="is">
-<h3>Is勢力<a class="headerlink" href="#is" title="このヘッドラインへのパーマリンク"></a></h3>
-<p>提供された <strong>勢力アイテム</strong> が、指定された <strong>チームId</strong> の兵士を使用しているかどうかをTrueで返します。</p>
+<section id="is-isfaction">
+<h3>Is勢力(IsFaction)<a class="headerlink" href="#is-isfaction" title="このヘッドラインへのパーマリンク"></a></h3>
+<p>提供された <strong>勢力アイテム(FactionsItem)</strong> が、指定された <strong>チームId</strong> の兵士を使用しているかどうかをTrueで返します。</p>
 <dl class="simple">
 <dt>パラメーター</dt><dd><ul class="simple">
-<li><p>チームId</p></li>
-<li><p>勢力アイテム</p></li>
+<li><p>チームId(TeamId)</p></li>
+<li><p>勢力アイテム(FactionsItem)</p></li>
 </ul>
 </dd>
 </dl>
@@ -172,8 +172,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" class="btn btn-neutral float-left" title="イベントのペイロード" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-right" title="ロジック" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../EVENT_PAYLOADS/EVENT_PAYLOADS.html" class="btn btn-neutral float-left" title="イベントのペイロード(EVENT PAYLOADS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../LOGIC/LOGIC.html" class="btn btn-neutral float-right" title="ロジック(LOGIC)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
